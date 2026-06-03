@@ -107,7 +107,7 @@ lg$add_filter(f)
 lg$fatal("test")
 #> via event$.logger: 400 
 #> via .obj():       400 
-#> FATAL [09:59:48.067] test
+#> FATAL [06:54:32.978] test
 lg$config(NULL)
 #> <Logger> [info] test
 #> 

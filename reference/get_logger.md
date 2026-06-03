@@ -40,7 +40,7 @@ lg <- get_logger("log/ger/test")
 # equivalent to
 lg <- get_logger(c("log", "ger", "test"))
 lg$warn("a %s message", "warning")
-#> WARN  [09:59:53.676] a warning message
+#> WARN  [06:54:39.600] a warning message
 lg
 #> <Logger> [info] log/ger/test
 #> 
@@ -56,7 +56,7 @@ if (requireNamespace('glue')){
   lg <- get_logger_glue("log/ger")
 }
 lg$warn("a {.text} message", .text = "warning")
-#> WARN  [09:59:53.681] a warning message
+#> WARN  [06:54:39.606] a warning message
 
 # completely reset 'glue' to an unconfigured vanilla Logger
 get_logger("log/ger", reset = TRUE)
@@ -66,9 +66,9 @@ get_logger("log/ger", reset = TRUE)
 #>   console: <AppenderConsole> [all] -> console
 # WARNING: this invalidates existing references to the Logger
 try(lg$info("lg has been invalidated an no longer works"))
-#> Warning: [2026-06-02 09:59:53.685] log/ger ~ error in `lg$info("lg has been invalidated an no longer works")`: Trying to log via a Logger reference that is no longer valid. Logger references become invalid when you reset a when you reset a Logger with `get_logger(reset = TRUE)`. Please re-create the Logger reference with with `get_logger(log/ger)`
+#> Warning: [2026-06-03 06:54:39.610] log/ger ~ error in `lg$info("lg has been invalidated an no longer works")`: Trying to log via a Logger reference that is no longer valid. Logger references become invalid when you reset a Logger with `get_logger(reset = TRUE)`. Please re-create the Logger reference with `get_logger(log/ger)`
 
 lg <- get_logger("log/ger")
 lg$info("now all is well again")
-#> INFO  [09:59:53.686] now all is well again
+#> INFO  [06:54:39.612] now all is well again
 ```
